@@ -19,11 +19,11 @@ choice=IntVar()
 canvas=Canvas(root,width=400,height=300)
 canvas.pack()
 
-Radiobutton(root,text='사각형',padx=20,variable=choice,value=1).grid(row=0,column=1)
-Radiobutton(root,text='원',padx=20,variable=choice,value=2).grid(row=0,column=2)
-Radiobutton(root,text='텍스트',padx=20,variable=choice,value=3).grid(row=0,column=3)
+Radiobutton(root,text='사각형',padx=20,variable=choice,value=1).pack(side=LEFT)
+Radiobutton(root,text='원',padx=20,variable=choice,value=2).pack(side=LEFT)
+Radiobutton(root,text='텍스트',padx=20,variable=choice,value=3).pack(side=LEFT)
 
 button=Button(root,text='그리기',command=getanswer)
-button.pack(side=BOTTOM)
+button.pack(anchor=CENTER)
 
 root.mainloop()

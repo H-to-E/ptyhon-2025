@@ -1,15 +1,22 @@
 from tkinter import *
 
 class Student:
+    
     def __init__(self,stu_id,name):
         self.name=name
         self.stu_id=stu_id
+        
     def __eq__(self,other):
         if isinstance(other,Student):
             return self.stu_id == other.stu_id
         return False
 def print_fields():
-    e1.
+    k = Student(e1.get(),e2.get())
+    if k not in students:
+        students.append('s')
+
+        
+
 
 root=Tk()
 root.title('중간고사 5번')
