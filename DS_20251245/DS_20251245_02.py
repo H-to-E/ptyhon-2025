@@ -1,33 +1,40 @@
-class BankAccount():
-    def __init__(self,name):
-        self.owner=name
-        self.__balance=0
-        print(self.owner,'의 계좌가 생성되었습니다')
-    def get_balance(self):
-        return self.__balance
-    def set_balance(self,money):
-        if money >= 0:
-            self.__balance = money
-    def desposit(self,money):
-        if money >=0:
-            self.__balance += money
-            print(self.owner,'통장에서',money,'원이 입금되었습니다')
+from tkinter import *
 
-    def withdraw(self,money):
-        if money <= self.__balance:
-            self.__balance -= money
-            print(self.owner,'통장에서',money,'원이 출금되었습니다')
 
-a= BankAccount('A')
-b= BankAccount('B')
+def draw_image():
 
-a.desposit(100)
-b.desposit(200)
-a.withdraw(30)
-b.withdraw(50)
+    global img  # 전역 변수로 선언 (함수 종료 후에도 참조 유지)
+    canvas.delete("all")
+    img = PhotoImage(file="DS_20251245/image4.png")
 
-print(f'{a.owner} 계좌의 현재 잔액:',a.get_balance())
-print(f'{b.owner} 계좌의 현재 잔액:',b.get_balance())
+    canvas.create_image(20, 20, anchor=NW, image=img)
+def draw_rec():
+    canvas.delete("all")
+    canvas.create_rectangle(100,100,200,200,fill='red')
+def draw_cir():
+    canvas.delete("all")
+    canvas.create_oval(100,100,200,200,fill='blue')
+def delall():
+    canvas.delete("all")
 
-a.set_balance(500)
-print(f'{a.owner} 계좌의 수정된 잔액:',a.get_balance())
+root = Tk()
+root.title('중간고사 7번')
+root.geometry("420x440")
+choice=IntVar()
+
+canvas=Canvas(root,width=400,height=320,bg="white")
+canvas.pack()
+
+buframe= Frame(root)
+buframe.pack()
+
+
+Button(buframe,text='사각형',command=draw_rec).pack(side=LEFT,padx=10)
+Button(buframe,text='원',command=draw_cir).pack(side=LEFT,padx=10)
+Button(buframe,text='그림',command=draw_image).pack(side=LEFT,padx=10)
+Button(buframe,text='지우기',command=delall).pack(side=LEFT,padx=10)
+
+Label(root,text="버튼을 눌러 도형을 선택하세요").pack()
+
+
+root.mainloop()
