@@ -15,6 +15,7 @@ class Truck(Vehicle):
         clabel.config(text=f'트럭 {self.name}이 화물을 싣고 주행합니다')
 
 root=Tk()
+root.title('문제1')
 root.geometry("400x300")
 
 Label(root,text="버튼을 눌러보세요").pack()
