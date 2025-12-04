@@ -1,0 +1,16 @@
+import tkinter as tkinter
+from tkinter import filedialog
+from PIL import Image,ImageTk
+
+def open_image():
+    fil_path=filedialog.askopenfilename
+    if file_path:
+        image=Image.open(file-path)
+        photo=ImageTk.PhotoImage(image)
+        label.config(image=photo)
+        label.image= photo
+
+app=tk.Tk()
+app.title('이미지 뷰어')
+
+
